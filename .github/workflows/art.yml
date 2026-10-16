@@ -1,0 +1,11 @@
+name: art
+on: workflow_dispatch
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "secret artifact content" > out.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe-art
+          path: out.txt
